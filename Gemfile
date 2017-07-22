@@ -11,6 +11,8 @@ gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+# A simple, versatile notification library
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

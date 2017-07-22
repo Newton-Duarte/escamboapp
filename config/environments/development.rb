@@ -2,6 +2,8 @@ Rails.application.configure do
 
   # Better_Errors
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+  # WebConsole Rails
+  config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
   # Foreman fix
   $stdout.sync = true
   # Devise

@@ -15,7 +15,10 @@
 </head>
 <body>
 
-  <%= yield %>
+  <div id="wrapper">
+    <%= render partial: 'layouts/backoffice_shared/navigation' %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

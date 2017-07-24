@@ -30,6 +30,8 @@ Admin.create!(
   name: "Administrator Geral",
   email: "admin@admin.com",
   password: "123456",
-  password_confirmation: "123456")
+  password_confirmation: "123456",
+  role: 0
+  )
 
 puts "Administrator padrão criado com sucesso!"

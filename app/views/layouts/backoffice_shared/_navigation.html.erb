@@ -16,7 +16,7 @@
 
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+              <%= current_admin.email %><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-user">
               <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -48,6 +48,11 @@
             <li>
               <%= link_to backoffice_categories_path do %>
                 <i class="fa fa-th-list fa-fw"></i> Categories
+              <% end %>
+            </li>
+            <li>
+              <%= link_to backoffice_admins_path do %>
+                <i class="fa fa-users fa-fw"></i> Administrators
               <% end %>
             </li>
           </ul>

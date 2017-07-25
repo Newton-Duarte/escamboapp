@@ -29,6 +29,14 @@
       <%= f.email_field :email, class: "form-control", placeholder: "example@example.com" %>
     </div>
     <div class="form-group">
+      <%= f.label :role %>
+      <%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
+        <div class="radio">
+          <%= b.label { b.radio_button + b.text} %>
+        </div>
+      <% end %>
+    </div>
+    <div class="form-group">
       <label>Password</label>
       <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
     </div>

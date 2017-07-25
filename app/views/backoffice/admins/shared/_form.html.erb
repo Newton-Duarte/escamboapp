@@ -28,6 +28,7 @@
       <label>E-mail</label>
       <%= f.email_field :email, class: "form-control", placeholder: "example@example.com" %>
     </div>
+    <% if policy(@admin).edit? %>
     <div class="form-group">
       <%= f.label :role %>
       <%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
@@ -36,6 +37,7 @@
         </div>
       <% end %>
     </div>
+    <% end %>
     <div class="form-group">
       <label>Password</label>
       <%= f.password_field :password, class: "form-control", placeholder: "Password" %>

@@ -14,8 +14,10 @@
             <th>E-mail</th>
             <th>Role</th>
             <th>
-              <%= link_to new_backoffice_admin_path, class: "btn btn-primary btn-circle" do %>
-                <i class="fa fa-plus"></i>
+              <% if policy(@admins).new? %>
+                <%= link_to new_backoffice_admin_path, class: "btn btn-primary btn-circle" do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
               <% end %>
             </th>
           </tr>

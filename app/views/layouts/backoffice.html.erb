@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>Backoffice - Escamboapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'backoffice', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'backoffice', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'backoffice', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'backoffice' %>
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,6 +38,11 @@
   <% if notice %>
     <script>
       $.notify("<%= notice %>", "success");
+    </script>
+  <% end %>
+<% if alert %>
+    <script>
+      $.notify("<%= alert %>", "error");
     </script>
   <% end %>
 

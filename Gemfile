@@ -11,6 +11,7 @@ gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'enum_help'
 gem 'pundit'
+gem 'lerolero_generator'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.

@@ -30,6 +30,9 @@
             <td><%= admin.email %></td>
             <td><%= admin.role_i18n %></td>
             <td style="width: 150px">
+            <%= link_to edit_backoffice_send_mail_path(admin), class: "btn btn-info btn-circle", remote: true do %>
+              <i class="fa fa-envelope"></i>
+            <% end %>
             <%= link_to edit_backoffice_admin_path(admin), class: "btn btn-warning btn-circle" do %>
               <i class="fa fa-pencil"></i>
             <% end %>
@@ -53,3 +56,5 @@
   <!-- /.panel-body -->
 </div>
 <!-- /.panel-default -->
+
+<%= render partial: "backoffice/admins/shared/send_mail_modal" %>

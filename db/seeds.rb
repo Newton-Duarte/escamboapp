@@ -24,14 +24,28 @@ end
 
 puts "CATEGORIAS cadastradas com sucesso!"
 
-puts "Criando Administrator padrão..."
+###########################################################
+
+puts "Criando Administrador padrão..."
 
 Admin.create!(
-  name: "Administrator Geral",
+  name: "Administrador Geral",
   email: "admin@admin.com",
   password: "123456",
   password_confirmation: "123456",
   role: 0
-  )
+)
 
-puts "Administrator padrão criado com sucesso!"
+puts "Administrador padrão criado com sucesso!"
+
+###########################################################
+
+puts "Criando Membro padrão..."
+
+Member.create!(
+  email: "member@member.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+puts "Membro padrão criado com sucesso!"

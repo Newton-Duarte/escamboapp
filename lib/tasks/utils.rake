@@ -1,8 +1,28 @@
 namespace :utils do
-  desc "Criar administrators fake"
+
+  desc "Setup Desenvolvimento"
+  task setup_dev: :environment do
+
+    puts "Executando o setup para desenvolvimento"
+
+    puts "Apagando BD... #{%x(rake db:drop)}"
+    puts "Criando BD... #{%x(rake db:create)}"
+    puts  %x(rake db:migrate)
+    puts  %x(rake db:seed)
+    puts  %x(rake utils:generate_admins)
+    puts  %x(rake utils:generate_members)
+    puts  %x(rake utils:generate_ads)
+
+    puts "Setup desenvolvimento concluído com sucesso!"
+
+  end
+
+########################################################################
+
+  desc "Criar administradores fake"
   task generate_admins: :environment do
 
-    puts "Gerando administrators Fakes..."
+    puts "Gerando ADMINISTRADORES Fakes..."
 
     10.times do
       Admin.create!(
@@ -11,24 +31,45 @@ namespace :utils do
         password: "123456",
         password_confirmation: "123456",
         role: [0,0,1,1,1].sample
-        )
+      )
     end
 
-    puts "Gerando administrators Fakes...[OK]"
+    puts "Gerando ADMINISTRADORES Fakes...[OK]"
 
   end
 
+  desc "Criar membros fake"
+  task generate_members: :environment do
+
+    puts "Gerando MEMBROS Fakes..."
+
+    100.times do
+      Member.create!(
+        email: Faker::Internet.email,
+        password: "123456",
+        password_confirmation: "123456"
+      )
+    end
+
+    puts "Gerando MEMBROS Fakes...[OK]"
+
+  end
+
+
+  #####################################################################
+
   desc "Cria Anúncios Fake"
   task generate_ads: :environment do
+
     puts "Cadastrando ANÚNCIOS..."
 
     100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: LeroleroGenerator::paragraph(Random.rand(3)),
+        description: LeroleroGenerator.paragraph(Random.rand(3)),
         member: Member.all.sample,
         category: Category.all.sample,
-        price: "#{Random.rand(500)}, #{Random.rand(99)}",
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
         picture: File.new(Rails.root.join(
           'public',
           'templates',
@@ -41,6 +82,7 @@ namespace :utils do
     end
 
     puts "ANÚNCIOS cadastrados com sucesso!"
+
   end
 
 end

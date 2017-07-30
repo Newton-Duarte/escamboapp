@@ -22,12 +22,30 @@
             <%= link_to "Cadastrar-se", new_member_registration_path %>
           </li>
         <% else %>
-          <li>
-            <%= link_to current_member.email, "#" %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <%= current_member.email %><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <%= link_to site_profile_dashboard_index_path do %>
+                  <i class="fa fa-user fa-fw"></i>
+                  Perfil
+                <% end %>
+              </li>
+              <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to destroy_member_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-fw"></i>
+                  Sair
+                <% end %>
+              </li>
+            </ul>
+            <!-- /.dropdown-user -->
           </li>
-          <li>
-            <%= link_to "Sair", destroy_member_session_path, method: :delete %>
-          </li>
+          <!-- /.dropdown -->
         <% end %>
       </ul>
     </div>

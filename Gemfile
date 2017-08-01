@@ -14,6 +14,7 @@ gem 'pundit'
 gem 'lerolero_generator'
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.

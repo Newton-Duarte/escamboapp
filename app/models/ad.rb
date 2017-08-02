@@ -14,6 +14,7 @@ class Ad < ActiveRecord::Base
 
   # paperclip
   has_attached_file :picture, styles: {
+    large: "800x300#",
     medium: "320x150#",
     thumb: "100x100>"
   }, default_url: "images/:style/missing.png"

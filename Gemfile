@@ -18,6 +18,8 @@ gem 'jquery-ui-rails'
 gem 'redcarpet'
 gem 'friendly_id'
 gem 'wiselinks'
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.

@@ -6,7 +6,7 @@ class Ad < ActiveRecord::Base
 
   # Association
 
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
 
   # Validates
@@ -18,6 +18,7 @@ class Ad < ActiveRecord::Base
   # Scopes
   scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(member) { where(member: member) }
+  scope :by_category, ->(id) { where(category: id) }
 
   # paperclip
   has_attached_file :picture, styles: {

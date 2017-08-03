@@ -14,3 +14,5 @@ Deseja adquirir o curso? Acesse o link abaixo e saiba como.
 sudo apt-get update
 sudo apt-get install imagemagick
 ```
+
+### Newton

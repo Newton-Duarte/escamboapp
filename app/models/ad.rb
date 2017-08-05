@@ -1,7 +1,12 @@
 class Ad < ActiveRecord::Base
 
   # Constants
+
   QUANTITY_PER_PAGE = 9
+
+  # RatyRate gem
+
+  ratyrate_rateable 'quality'
 
   # Callbacks
 
@@ -29,7 +34,7 @@ class Ad < ActiveRecord::Base
   }
 
   scope :to_the, ->(member) { where(member: member) }
-  scope :by_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QUANTITY_PER_PAGE) }
 
   # paperclip
   has_attached_file :picture, styles: {

@@ -21,6 +21,7 @@ gem 'wiselinks'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'rails-erd'
+gem 'ratyrate'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.

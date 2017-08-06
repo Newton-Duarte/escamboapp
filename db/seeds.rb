@@ -42,10 +42,17 @@ puts "Administrador padrão criado com sucesso!"
 
 puts "Criando Membro padrão..."
 
-Member.create!(
+member = Member.create!(
   email: "member@member.com",
   password: "123456",
   password_confirmation: "123456"
 )
+
+member.build_profile_member
+
+member.profile_member.first_name = Faker::Name.first_name
+member.profile_member.last_name = Faker::Name.last_name
+
+member.save!
 
 puts "Membro padrão criado com sucesso!"
